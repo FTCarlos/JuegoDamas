@@ -29,6 +29,8 @@ namespace Damas
 
         private void IniciarTablero()
         {
+            Tablero tablero = new Tablero();
+
             for (int i = 0; i < tamañoTablero; i++)
             {
                 grdTablero.ColumnDefinitions.Add(new ColumnDefinition());
@@ -45,24 +47,24 @@ namespace Damas
                     cuadro.MouseDown += Cuadro_MouseDown;
                     grdTablero.Children.Add(cuadro);
 
-                    if (column == 2 && row == 3)
-                    {
-                        Frame fichaBtn = new Frame();
-                        fichaBtn.Background = Brushes.Transparent;
-                        Image ficha = new Image();
-                        ficha.Stretch = Stretch.Uniform;
-                        Thickness thick = new Thickness();
-                        thick.Top = thick.Right = thick.Bottom = thick.Left = 5;
-                        ficha.Margin = thick;
-                        ficha.Source = new BitmapImage(new Uri("IA.png", UriKind.Relative));
-                        fichaBtn.Content = ficha;
-                        Grid.SetColumn(fichaBtn, column);
-                        Grid.SetRow(fichaBtn, row);
+                    //if (column == 2 && row == 3)
+                    //{
+                    //    Frame fichaBtn = new Frame();
+                    //    fichaBtn.Background = Brushes.Transparent;
+                    //    Image ficha = new Image();
+                    //    ficha.Stretch = Stretch.Uniform;
+                    //    Thickness thick = new Thickness();
+                    //    thick.Top = thick.Right = thick.Bottom = thick.Left = 5;
+                    //    ficha.Margin = thick;
+                    //    ficha.Source = new BitmapImage(new Uri("IA.png", UriKind.Relative));
+                    //    fichaBtn.Content = ficha;
+                    //    Grid.SetColumn(fichaBtn, column);
+                    //    Grid.SetRow(fichaBtn, row);
 
-                        fichaBtn.MouseDown += FichaBtn_MouseDown;
-                        grdTablero.Children.Add(fichaBtn);
-                        FichasEnJuego.Add(new Ficha() { FichaJuego = fichaBtn, EsDama = false, FichaDelJugador = false });
-                    }
+                    //    fichaBtn.MouseDown += FichaBtn_MouseDown;
+                    //    grdTablero.Children.Add(fichaBtn);
+                    //    FichasEnJuego.Add(new Ficha() { FichaJuego = fichaBtn, EsDama = false, FichaDelJugador = false }); 
+                    //}
 
                     if (cuadro.Background == Brushes.Black && (row <= 1 || row > tamañoTablero - 3))
                     {
