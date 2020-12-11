@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Damas"
         mc:Ignorable="d"
-        Title="Damas" Height="550" Width="550" WindowStartupLocation="CenterScreen">
+        Title="Damas" Height="550" Width="550" WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded" Icon="jugador.png">
     <Grid x:Name="grdTablero">
     </Grid>
 </Window>
